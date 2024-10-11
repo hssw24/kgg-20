@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
 function MathApp() {
+  // useState Hooks für die Aufgaben und die Benutzerantwort
   const [problem1, setProblem1] = useState({ num1: 0, num2: 0 });
   const [problem2, setProblem2] = useState({ num1: 0, num2: 0 });
   const [result1, setResult1] = useState(0);
   const [result2, setResult2] = useState(0);
   const [message, setMessage] = useState("");
 
-  // Funktion zum Generieren einer neuen Rechenaufgabe mit Summe <= 20
+  // Funktion zum Generieren einer neuen Rechenaufgabe
   const generateProblem = () => {
-    let num1, num2;
-
-    do {
-      num1 = Math.floor(Math.random() * 21);
-      num2 = Math.floor(Math.random() * 21);
-    } while (num1 + num2 > 20); // Wiederhole, wenn das Ergebnis > 20 ist
-
+    const num1 = Math.floor(Math.random() * 21);
+    const num2 = Math.floor(Math.random() * 21);
     return { num1, num2 };
   };
 
